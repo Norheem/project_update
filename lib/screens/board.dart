@@ -39,73 +39,67 @@ class _BoardState extends State<Board> {
           ),
         ],
       ),
-      body: SafeArea(
+      body: Padding(
+        padding: const EdgeInsets.only(left: 10, right: 10),
         child: Column(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(
-                right: 150,
-                bottom: 5,
-              ),
-              child: Text(
-                'Redesign Landing Page',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 20,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Redesign Landing Page',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
-              ),
+              ],
             ),
             const Row(
               children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 24),
-                  child: Text(
-                    'Due Date',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                Text(
+                  'Due Date',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(left: 40),
-                  child: Text(
-                    'Sunday, 23 April 2023',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 20,
-                    ),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Sunday, 23 April 2023',
+                  style: TextStyle(
+                    color: Colors.grey,
+                    fontSize: 20,
                   ),
                 ),
               ],
             ),
             Row(
               children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 24),
-                  child: Text(
-                    'Status',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+                const Text(
+                  'Status',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 65),
-                  child: Container(
-                    width: 120,
-                    height: 35,
-                    decoration: BoxDecoration(
-                      color: const Color.fromARGB(186, 255, 153, 0),
-                      borderRadius: BorderRadius.circular(20),
-                    ),
-                    child: const Center(
-                      child: Text(
-                        'On Progress',
-                        style: TextStyle(
-                          color: Colors.white,
-                        ),
+                const SizedBox(
+                  width: 40,
+                ),
+                Container(
+                  width: 120,
+                  height: 35,
+                  decoration: BoxDecoration(
+                    color: const Color.fromARGB(186, 255, 153, 0),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Center(
+                    child: Text(
+                      'On Progress',
+                      style: TextStyle(
+                        color: Colors.white,
                       ),
                     ),
                   ),
@@ -113,12 +107,12 @@ class _BoardState extends State<Board> {
               ],
             ),
             const SizedBox(
-              height: 10,
+              height: 2,
             ),
             const Row(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(left: 24, bottom: 60),
+                  padding: EdgeInsets.only(bottom: 60),
                   child: Text(
                     'Assign',
                     style: TextStyle(
@@ -128,7 +122,7 @@ class _BoardState extends State<Board> {
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 35),
+                  padding: EdgeInsets.only(left: 10),
                   child: Column(
                     children: [
                       Row(
@@ -144,7 +138,7 @@ class _BoardState extends State<Board> {
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
                       Row(
                         children: [
@@ -162,7 +156,7 @@ class _BoardState extends State<Board> {
                         ],
                       ),
                       SizedBox(
-                        height: 10,
+                        height: 5,
                       ),
                       Row(
                         children: [
@@ -185,49 +179,39 @@ class _BoardState extends State<Board> {
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(right: 270),
-              child: Text(
-                'Description',
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(bottom: 10, left: 10, right: 10),
-              child: Text(
-                'Revamp the landing page with a modern layout, clear messaging, and user-friendly navigation to improve user engagement and conversions.',
-                style: TextStyle(
-                  fontSize: 15,
-                ),
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(
-                left: 20,
-                right: 20,
-                bottom: 2,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Task',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 20,
-                    ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Text(
+                  'Description',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
                   ),
-                ],
+                ),
+              ],
+            ),
+            const Text(
+              'Revamp the landing page with a modern layout, clear messaging, and user-friendly navigation to improve user engagement and conversions.',
+              style: TextStyle(
+                fontSize: 15,
               ),
+            ),
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  'Task',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              ],
             ),
             Padding(
               padding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                bottom: 10,
+                top: 3,
               ),
               child: buildContainer(
                 0,
@@ -240,12 +224,11 @@ class _BoardState extends State<Board> {
                 ],
               ),
             ),
-            const SizedBox(height: 1),
+            const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                bottom: 10,
+                // top: 2,
+                bottom: 2,
               ),
               child: buildContainer(
                 1,
@@ -257,12 +240,11 @@ class _BoardState extends State<Board> {
                 ],
               ),
             ),
-            const SizedBox(height: 1),
+            const SizedBox(height: 5),
             Padding(
               padding: const EdgeInsets.only(
-                left: 20,
-                right: 20,
-                bottom: 10,
+                // top: 5,
+                bottom: 5,
               ),
               child: buildContainer(
                 2,
@@ -274,317 +256,6 @@ class _BoardState extends State<Board> {
                 ],
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.only(
-            //     left: 20,
-            //     right: 20,
-            //   ),
-            //   child: Column(
-            //     children: [
-            //       Container(
-            //         width: 370,
-            //         height: 60,
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(10),
-            //           color: Colors.white,
-            //           boxShadow: [
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.2),
-            //               spreadRadius: 4,
-            //               blurRadius: 0,
-            //               offset: const Offset(0, 10),
-            //             ),
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.2),
-            //               spreadRadius: 10,
-            //               blurRadius: 6,
-            //               offset: const Offset(-10, 0),
-            //             ),
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.2),
-            //               spreadRadius: 10,
-            //               blurRadius: 6,
-            //               offset: const Offset(10, 0),
-            //             ),
-            //           ],
-            //         ),
-            //         child: const Row(
-            //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //           children: [
-            //             Padding(
-            //               padding: EdgeInsets.all(8.0),
-            //               child: CircleAvatar(
-            //                 radius: 20,
-            //                 backgroundColor: Color.fromARGB(232, 244, 67, 54),
-            //                 child: Icon(
-            //                   Icons.check,
-            //                   color: Colors.white,
-            //                 ),
-            //               ),
-            //             ),
-            //             Padding(
-            //               padding: EdgeInsets.only(left: 10, top: 10),
-            //               child: Column(
-            //                 children: [
-            //                   Text(
-            //                     'Landing Page Design',
-            //                     style: TextStyle(
-            //                       fontWeight: FontWeight.bold,
-            //                     ),
-            //                   ),
-            //                   Text(
-            //                     "Today, 10:31 AM",
-            //                     style: TextStyle(
-            //                       color: Colors.grey,
-            //                     ),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ),
-            //             Expanded(
-            //               child: Padding(
-            //                 padding: EdgeInsets.only(top: 20, left: 100),
-            //                 child: Stack(
-            //                   children: [
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 5,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile.jpg'),
-            //                       ),
-            //                     ),
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 18,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile2.jpg'),
-            //                       ),
-            //                     ),
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 30,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile3.jpg'),
-            //                       ),
-            //                     ),
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       const SizedBox(
-            //         height: 10,
-            //       ),
-            //       Container(
-            //         width: 370,
-            //         height: 60,
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(10),
-            //           color: Colors.white,
-            //           boxShadow: [
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.2),
-            //               spreadRadius: 0,
-            //               blurRadius: 8,
-            //               offset: const Offset(0, 0),
-            //             ),
-            //           ],
-            //         ),
-            //         child: Row(
-            //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //           children: [
-            //             Padding(
-            //               padding: const EdgeInsets.all(8.0),
-            //               child: CircleAvatar(
-            //                 radius: 20,
-            //                 backgroundColor: Colors.transparent,
-            //                 // backgroundColor:
-            //                 //     Color.fromARGB(232, 244, 67, 54),
-            //                 // child: Icon(
-            //                 //   Icons.check,
-            //                 //   color: Colors.white,
-            //                 // ),
-            //                 child: Container(
-            //                   width: 100,
-            //                   height: 100,
-            //                   decoration: BoxDecoration(
-            //                     shape: BoxShape.circle,
-            //                     border: Border.all(
-            //                       color: Colors.grey,
-            //                       width: 0.1,
-            //                     ),
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //             const Padding(
-            //               padding: EdgeInsets.only(top: 10),
-            //               child: Column(
-            //                 children: [
-            //                   Padding(
-            //                     padding: EdgeInsets.only(right: 25),
-            //                     child: Text(
-            //                       'Improvement Color',
-            //                       style: TextStyle(
-            //                         fontWeight: FontWeight.bold,
-            //                       ),
-            //                     ),
-            //                   ),
-            //                   Padding(
-            //                     padding: EdgeInsets.only(left: 20),
-            //                     child: Text(
-            //                       "31 March 2023, 02:42 PM",
-            //                       style: TextStyle(
-            //                         color: Colors.grey,
-            //                         // fontSize: 13,
-            //                       ),
-            //                     ),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ),
-            //             const Expanded(
-            //               child: Padding(
-            //                 padding: EdgeInsets.only(top: 20, left: 60),
-            //                 child: Stack(
-            //                   children: [
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 5,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile.jpg'),
-            //                       ),
-            //                     ),
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 18,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile2.jpg'),
-            //                       ),
-            //                     ),
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //       const SizedBox(
-            //         height: 10,
-            //       ),
-            //       Container(
-            //         width: 370,
-            //         height: 60,
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(10),
-            //           color: Colors.white,
-            //           boxShadow: [
-            //             BoxShadow(
-            //               color: Colors.grey.withOpacity(0.2),
-            //               spreadRadius: 0,
-            //               blurRadius: 8,
-            //               offset: const Offset(0, 0),
-            //             ),
-            //           ],
-            //         ),
-            //         child: Row(
-            //           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            //           children: [
-            //             Padding(
-            //               padding: const EdgeInsets.all(8.0),
-            //               child: CircleAvatar(
-            //                 radius: 20,
-            //                 backgroundColor: Colors.transparent,
-            //                 foregroundColor: Colors.red,
-            //                 //     Color.fromARGB(232, 244, 67, 54),
-            //                 // child: Icon(
-            //                 //   Icons.check,
-            //                 //   color: Colors.white,
-            //                 //),
-            //                 child: Container(
-            //                   width: 100,
-            //                   height: 100,
-            //                   decoration: BoxDecoration(
-            //                     shape: BoxShape.circle,
-            //                     border: Border.all(
-            //                       color: Colors.grey,
-            //                       width: 0.1,
-            //                     ),
-            //                   ),
-            //                 ),
-            //               ),
-            //             ),
-            //             const Padding(
-            //               padding: EdgeInsets.only(left: 10, top: 10),
-            //               child: Column(
-            //                 children: [
-            //                   Padding(
-            //                     padding: EdgeInsets.only(right: 25),
-            //                     child: Text(
-            //                       'Home Banking Moble App',
-            //                       style: TextStyle(
-            //                         fontWeight: FontWeight.bold,
-            //                       ),
-            //                     ),
-            //                   ),
-            //                   Padding(
-            //                     padding: EdgeInsets.only(right: 40),
-            //                     child: Text(
-            //                       "1 April 2023, 09:29 AM",
-            //                       style: TextStyle(
-            //                         color: Colors.grey,
-            //                         // fontSize: 13,
-            //                       ),
-            //                     ),
-            //                   ),
-            //                 ],
-            //               ),
-            //             ),
-            //             const Expanded(
-            //               child: Padding(
-            //                 padding: EdgeInsets.only(top: 20, left: 40),
-            //                 child: Stack(
-            //                   children: [
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 5,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile.jpg'),
-            //                       ),
-            //                     ),
-            //                     Positioned(
-            //                       top: 0,
-            //                       left: 18,
-            //                       child: CircleAvatar(
-            //                         radius: 10,
-            //                         backgroundImage:
-            //                             AssetImage('assets/profile2.jpg'),
-            //                       ),
-            //                     ),
-            //                   ],
-            //                 ),
-            //               ),
-            //             ),
-            //           ],
-            //         ),
-            //       ),
-            //     ],
-            //   ),
-            // )
           ],
         ),
       ),
@@ -712,13 +383,13 @@ class _BoardState extends State<Board> {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.only(top: 20, left: 100),
+                padding: const EdgeInsets.only(top: 20, left: 80),
                 child: Stack(
                   children: [
                     for (var i = 0; i < avatarImages.length; i++)
                       Positioned(
                         top: 0,
-                        left: i * 13.0,
+                        left: i * 10,
                         child: CircleAvatar(
                           radius: 10,
                           backgroundImage: AssetImage(avatarImages[i]),
